@@ -1,0 +1,9 @@
+# Dependências
+node_modules/
+
+# Arquivos gerados pelo Vite
+dist/
+
+# Variáveis de ambiente
+.env
+.env.*

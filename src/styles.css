@@ -1,0 +1,725 @@
+:root {
+  --au-bg: #0b0e1a;
+  --au-bg-soft: #131728;
+  --au-panel: #171c30;
+  --au-border: #262c44;
+  --au-accent: #38bdf8;
+  --au-accent-2: #a78bfa;
+  --au-text: #e8ecf8;
+  --au-muted: #9aa3c0;
+}
+
+html,
+body {
+  background: var(--au-bg);
+  color: var(--au-text);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.au-shell {
+  background:
+    radial-gradient(1100px 500px at 80% -10%, rgba(56, 189, 248, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 0% 0%, rgba(167, 139, 250, 0.07), transparent 55%),
+    var(--au-bg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--au-bg-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--au-border);
+  border-radius: 8px;
+}
+
+/* Navbar */
+.au-navbar {
+  background: rgba(10, 13, 24, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--au-border);
+}
+.au-brand-gem {
+  color: var(--au-accent);
+  text-shadow: 0 0 14px rgba(56, 189, 248, 0.8);
+}
+.au-nav-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--au-accent);
+}
+
+/* Buttons */
+.au-btn-primary {
+  background: linear-gradient(135deg, var(--au-accent), var(--au-accent-2));
+  color: #081019;
+  font-weight: 600;
+  border: none;
+}
+.au-btn-primary:hover {
+  filter: brightness(1.12);
+  color: #081019;
+}
+.au-btn-primary:disabled {
+  filter: grayscale(0.5);
+}
+.au-btn-ghost {
+  background: transparent;
+  color: var(--au-text);
+  border: 1px solid var(--au-border);
+}
+.au-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-color: var(--au-accent);
+}
+.au-link {
+  color: var(--au-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.au-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.au-footer {
+  background: var(--au-bg-soft);
+  border-top: 1px solid var(--au-border);
+}
+
+/* Hero */
+.au-hero {
+  background:
+    radial-gradient(600px 300px at 20% 10%, rgba(56, 189, 248, 0.16), transparent 70%),
+    radial-gradient(500px 300px at 90% 40%, rgba(167, 139, 250, 0.14), transparent 70%),
+    linear-gradient(180deg, #0e1428, var(--au-bg));
+  border-bottom: 1px solid var(--au-border);
+}
+.au-hero-kicker {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--au-accent);
+  font-weight: 600;
+}
+.au-gradient-text {
+  background: linear-gradient(90deg, var(--au-accent), var(--au-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.au-section-alt {
+  background: rgba(255, 255, 255, 0.015);
+  border-top: 1px solid var(--au-border);
+  border-bottom: 1px solid var(--au-border);
+}
+
+/* Features / schools */
+.au-feature,
+.au-school {
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  border-radius: 14px;
+  height: 100%;
+  padding: 1.25rem;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.au-feature:hover,
+.au-school:hover {
+  transform: translateY(-3px);
+  border-color: var(--au-accent);
+}
+.au-feature i,
+.au-school-icon {
+  font-size: 1.6rem;
+  color: var(--au-accent);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Tags / chips / skills */
+.au-tag {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--au-accent);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.au-chip {
+  background: var(--au-bg-soft);
+  color: var(--au-text);
+  border: 1px solid var(--au-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.au-chip:hover {
+  border-color: var(--au-accent);
+  color: #fff;
+}
+.au-skill {
+  background: rgba(167, 139, 250, 0.12);
+  color: var(--au-accent-2);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 8px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Character cards */
+.au-char-card {
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  transition: 0.15s ease;
+  display: flex;
+  flex-direction: column;
+}
+.au-char-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--au-accent);
+}
+.au-char-banner {
+  position: relative;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 1rem;
+}
+.au-char-card-sm .au-char-banner {
+  min-height: 130px;
+}
+.au-char-emoji {
+  font-size: 3rem;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+}
+.au-char-name h3 {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+.au-char-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.au-char-summary {
+  color: var(--au-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Panels */
+.au-panel {
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  border-radius: 14px;
+}
+.au-panel-header {
+  background: transparent;
+  border-bottom: 1px solid var(--au-border);
+  border-radius: 14px 14px 0 0;
+}
+.au-tabs .nav-link {
+  color: var(--au-muted);
+  border: none;
+  padding: 0.75rem 1rem;
+}
+.au-tabs .nav-link.active {
+  background: transparent;
+  color: var(--au-accent);
+  border-bottom: 2px solid var(--au-accent);
+}
+.au-divider {
+  border-color: var(--au-border);
+}
+
+/* Inputs */
+.au-input,
+.au-input-group {
+  background: var(--au-bg-soft);
+  border: 1px solid var(--au-border);
+  color: var(--au-text);
+}
+.au-input:focus {
+  background: var(--au-bg-soft);
+  color: #fff;
+  border-color: var(--au-accent);
+  box-shadow: 0 0 0 0.2rem rgba(56, 189, 248, 0.15);
+}
+.au-input::placeholder {
+  color: #5b6484;
+}
+.au-input:disabled {
+  opacity: 0.55;
+}
+
+/* Character hero */
+.au-char-hero-bg {
+  position: relative;
+}
+.au-char-hero-emoji {
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  font-size: 3.4rem;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+.au-quote {
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+  border-left: 3px solid var(--au-accent);
+  padding-left: 0.9rem;
+  max-width: 700px;
+}
+
+/* Timeline */
+.au-timeline {
+  list-style: none;
+  padding-left: 1.1rem;
+  margin: 0;
+  border-left: 2px solid var(--au-border);
+}
+.au-timeline li {
+  position: relative;
+  padding: 0 0 1.1rem 1rem;
+  color: var(--au-muted);
+}
+.au-timeline li::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--au-accent);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.au-dev-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.au-dev-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed var(--au-border);
+  color: var(--au-muted);
+}
+.au-dev-list li:last-child {
+  border-bottom: none;
+}
+.au-dev-list i {
+  color: var(--au-accent);
+  margin-right: 0.4rem;
+}
+
+/* Spells */
+.au-spell {
+  background: var(--au-bg-soft);
+  border: 1px solid var(--au-border);
+  border-radius: 12px;
+  padding: 0.9rem;
+  height: 100%;
+}
+.au-spell h6 {
+  color: var(--au-accent);
+}
+
+/* Ficha */
+.au-ficha dd {
+  font-weight: 600;
+}
+.au-ficha dt {
+  color: var(--au-muted);
+}
+.au-ficha dd,
+.au-ficha dt {
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed var(--au-border);
+  margin-bottom: 0;
+}
+.au-ficha > *:last-of-type dd,
+.au-ficha > *:last-of-type dt {
+  border-bottom: none;
+}
+
+/* Ranks */
+.au-rank {
+  background: var(--au-bg-soft);
+  border: 1px solid var(--au-border);
+  border-radius: 12px;
+  padding: 0.8rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.au-rank-num {
+  color: var(--au-accent);
+  font-weight: 700;
+}
+
+/* Grimoire link cards */
+.au-grimoire {
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  transition: 0.15s ease;
+}
+.au-grimoire:hover {
+  border-color: var(--au-accent);
+  transform: translateY(-3px);
+}
+.au-grimoire-emoji {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+/* Regions */
+.au-region {
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.au-region-top {
+  height: 90px;
+  display: grid;
+  place-items: center;
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Auth */
+.au-auth-wrap {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+.au-auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile preview (Netflix/Crunchyroll style) */
+.au-profile-preview {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--au-border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+.au-preview-banner {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  min-height: 240px;
+}
+.au-preview-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 14, 26, 0.15), rgba(11, 14, 26, 0.9));
+}
+.au-preview-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 1.2rem;
+  padding: 3rem 2rem;
+}
+.au-preview-avatar {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  background: var(--au-panel);
+}
+.au-preview-kicker {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--au-accent);
+  font-weight: 700;
+}
+.au-preview-strip {
+  height: 6px;
+  background: linear-gradient(90deg, var(--au-accent), var(--au-accent-2));
+}
+
+/* Avatar pickers */
+.au-avatar-opt,
+.au-banner-opt {
+  background: transparent;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.15s ease;
+}
+.au-avatar-opt img {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.au-avatar-opt:hover {
+  transform: scale(1.06);
+}
+.au-thumb-label {
+  color: var(--au-muted);
+  margin-top: 0.2rem;
+}
+.au-avatar-selected {
+  border-color: var(--au-accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+}
+.au-banner-opt {
+  border-radius: 12px;
+}
+.au-banner-opt img {
+  border-radius: 10px;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+.au-banner-opt:hover {
+  transform: scale(1.03);
+}
+.au-banner-selected {
+  border-color: var(--au-accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+}
+
+/* Anime cards */
+.au-anime-card {
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  transition: 0.15s ease;
+}
+.au-anime-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--au-accent);
+}
+.au-anime-cover {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+.au-anime-cover img {
+  height: 100%;
+  object-fit: cover;
+}
+.au-anime-score {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(11, 14, 26, 0.85);
+  color: #fbbf24;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.au-anime-info {
+  padding: 0.6rem 0.75rem;
+}
+.au-anime-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--au-text);
+  line-height: 1.25;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.au-anime-meta {
+  margin: 0.25rem 0 0;
+  font-size: 0.7rem;
+  color: var(--au-muted);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Character cards (generic) */
+.au-char2-card {
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  transition: 0.15s ease;
+}
+.au-char2-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--au-accent);
+}
+.au-char2-photo {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+.au-char2-photo img {
+  height: 100%;
+  object-fit: cover;
+}
+.au-char2-info {
+  padding: 0.6rem 0.75rem;
+}
+.au-char2-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--au-text);
+  margin: 0;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Character profile page */
+.au-char2-profile {
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.au-role-card {
+  text-align: center;
+}
+.au-role-avatar {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid var(--au-border);
+}
+.au-role-wide img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 2px solid var(--au-border);
+}
+.au-role-name {
+  color: var(--au-text);
+  font-size: 0.78rem;
+  margin: 0.35rem 0 0.15rem;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Anime detail hero */
+.au-anime-hero-bg {
+  background:
+    radial-gradient(600px 300px at 80% 0%, rgba(56, 189, 248, 0.14), transparent 70%),
+    linear-gradient(135deg, #141a33, #0b0e1a);
+}
+.au-trailer {
+  border: 1px solid var(--au-border);
+}
+
+/* Genres */
+.au-genre-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--au-panel);
+  border: 1px solid var(--au-border);
+  color: var(--au-text);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  transition: 0.15s ease;
+  cursor: pointer;
+  font-weight: 600;
+}
+.au-genre-chip small {
+  color: var(--au-muted);
+  font-weight: 500;
+}
+.au-genre-chip:hover {
+  border-color: var(--au-accent);
+  transform: translateY(-2px);
+}
+
+/* Feature block */
+.seminal {
+  background: linear-gradient(180deg, var(--au-bg-soft), var(--au-bg));
+  border-bottom: 1px solid var(--au-border);
+}
+
+/* Skeletons */
+.au-skeleton-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.au-skeleton {
+  background: linear-gradient(100deg, var(--au-panel) 40%, #20263f 50%, var(--au-panel) 60%);
+  background-size: 200% 100%;
+  animation: au-shimmer 1.3s infinite;
+  border-radius: 12px;
+  aspect-ratio: 2 / 3;
+}
+.au-skeleton-wide {
+  aspect-ratio: 16 / 9;
+}
+.au-skeleton-hero {
+  aspect-ratio: 21 / 9;
+}
+.au-skeleton-chip {
+  width: 150px;
+  height: 42px;
+  aspect-ratio: auto;
+  border-radius: 999px;
+}
+@keyframes au-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.au-chip-active {
+  background: var(--au-accent);
+  border-color: var(--au-accent);
+  color: #0b0e1a;
+  font-weight: 600;
+}
