@@ -584,6 +584,10 @@ body {
   font-size: 0.72rem;
   font-weight: 700;
 }
+.au-anime-cover .au-anime-score {
+  right: auto;
+  left: 8px;
+}
 .au-anime-info {
   padding: 0.6rem 0.75rem;
 }
